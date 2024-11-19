@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.fatec.product.dtos.ProductResponse;
 import br.fatec.product.entities.Product;
 import br.fatec.product.services.ProductService;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -25,7 +26,7 @@ public class ProductController {
     private ProductService service;
 
     @GetMapping    
-    public ResponseEntity<List<Product>> getProducts(){
+    public ResponseEntity<List<ProductResponse>> getProducts(){
         return ResponseEntity.ok(service.getAllProducts());
     }
     
